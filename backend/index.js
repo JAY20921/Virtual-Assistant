@@ -10,7 +10,7 @@ import userRouter from './routes/user.routes.js';
 
 const app = express();
 app.use(cors({
-  origin: 'https://virtualassistant-byjay-backend.onrender.com',
+  origin: 'https://virtual-assistant-byjay.onrender.com',
   credentials: true,
 }));
 const PORT = process.env.PORT || 5000;
