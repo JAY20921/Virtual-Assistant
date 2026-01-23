@@ -40,16 +40,12 @@ A full-stack **AI Voice Assistant web application** that enables users to intera
 | *Select presets or upload via Cloudinary* | *Personalize assistant identity* |
 
 ### 🏠 Main Interface
-| Home & Listening | AI Response |
+| Home & Listening |
 |:---:|:---:|
-| ![Home](./screenshots/home.png) | ![Response](./screenshots/ai-response.png) |
-| *Voice command interface* | *Intelligent AI response* |
+| ![Home](./screenshots/home.png) |
+| *Voice command interface* |
 
-### 📱 Responsive Design
-| Mobile View |
-|:---:|
-| ![Mobile View](./screenshots/mobile-view.png) |
-| *Fully responsive design for mobile devices* |
+
 
 ---
 
