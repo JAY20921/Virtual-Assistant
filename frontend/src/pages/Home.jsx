@@ -339,23 +339,20 @@ function Home() {
 
       <h1 className="text-white text-[18px] font-semibold">Hi I am {userData?.assistantName}</h1>
 
-      {/* Voice mode: gifs + transcript (Chrome/Edge) */}
+      {/* Voice mode visual indicators (Chrome/Edge only) */}
       {isSpeechSupported && (
         <>
           {!aiText && <img src={userImg} alt="user listening" className="w-[200px]" />}
           {aiText && <img src={aiImg} alt="assistant speaking" className="w-[200px]" />}
-          <h1 className="text-white text-[18px] font-semibold text-center px-4">
-            {userText ? userText : aiText ? aiText : null}
-          </h1>
           {listening && (
             <p className="text-green-400 text-[14px] animate-pulse">🎙️ Listening...</p>
           )}
         </>
       )}
 
-      {/* Text input fallback (always visible; primary in Firefox) */}
+      {/* Conversation layout & text input (all browsers) */}
       <div className="w-full max-w-[600px] px-4 flex flex-col items-center gap-3">
-        {!isSpeechSupported && (userText || aiText) && (
+        {(userText || aiText) && (
           <div
             className="w-full rounded-2xl p-4 text-white text-[16px] text-center"
             style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.18)' }}
@@ -363,7 +360,7 @@ function Home() {
             {userText && <p className="text-blue-300 mb-1">You: {userText}</p>}
             {aiText && (
               <>
-                <img src={aiImg} alt="assistant speaking" className="w-[80px] mx-auto my-2" />
+                {!isSpeechSupported && <img src={aiImg} alt="assistant speaking" className="w-[80px] mx-auto my-2" />}
                 <p className="text-white">{aiText}</p>
               </>
             )}
