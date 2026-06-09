@@ -44,7 +44,8 @@ function SignIn() {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <form
-        className='w-[90%] h-[600px] max-w-[500px] bg-[#00000098] backdrop-blur-md shadow-lg shadow-black flex flex-col items-center justify-center gap-[20px] px-[20px]'
+        className='w-[90%] h-[600px] max-w-[500px] bg-[#00000098] shadow-lg shadow-black flex flex-col items-center justify-center gap-[20px] px-[20px]'
+        style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}
         onSubmit={handleSignIn}
       >
 

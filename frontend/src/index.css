@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+/* ── Cross-browser backdrop-filter fix ─────────────────────────── */
+/* Firefox < 126 requires layout.css.backdrop-filter.enabled in about:config */
+/* We add -webkit- prefix everywhere for maximum compat */
+.ff-backdrop-blur,
+[class*="backdrop-blur"] {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Smooth scrollbar (Firefox uses scrollbar-width) ────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
+}
+
+/* ── Fix Firefox not honouring height:100vh correctly ───────────── */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Fix placeholder opacity in Firefox ─────────────────────────── */
+input::placeholder {
+  opacity: 1;
+}
+
+/* ── Rounded utility Firefox compat ─────────────────────────────── */
+.rounded-4xl {
+  border-radius: 2rem;
+}
+
+/* ── Animate pulse (Tailwind already has this, just ensuring compat) */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
